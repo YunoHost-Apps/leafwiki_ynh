@@ -23,6 +23,8 @@ ynh_app_setting_set --key=totp_encryption_key --value=$totp_encryption_key
 max_asset_upload_size=50M
 ynh_app_setting_set --key=max_asset_upload_size --value=$max_asset_upload_size
 
+redirect_string=$(echo "https://$domain$path" | base64)
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
