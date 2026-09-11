@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+Self-hosted wiki. Single Go binary, SQLite, Markdown on disk. No external database required.
