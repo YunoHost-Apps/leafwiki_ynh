@@ -19,10 +19,6 @@ Self-hosted wiki. Single Go binary. SQLite + Markdown stored on disk
 <a href="https://github.com/YunoHost-Apps/leafwiki_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
 </div>
 
-
-## Screenshots
-![Screenshot of LeafWiki](./doc/screenshots/example.jpg)
-
 ## 📦 Developer info
 
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/leafwiki)](https://ci-apps.yunohost.org/ci/apps/leafwiki/)
