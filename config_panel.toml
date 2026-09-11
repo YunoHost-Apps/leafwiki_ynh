@@ -1,0 +1,19 @@
+# https://yunohost.org/en/packaging_config_panels
+# https://github.com/YunoHost/example_ynh/blob/master/config_panel.toml.example
+
+version = "1.0"
+
+[main]
+name.en = "Main configuration"
+name.fr = "Configuration principale"
+services = ["__APP__"]
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.max_asset_upload_size]
+        ask = "Maximum size for asset uploads (e.g. 50MiB, 50MB, 52428800) (default: \"50MiB\")"
+        type = "string"
+        help = "Maximum size for asset uploads (e.g. 50MiB, 50MB, 52428800) (default: \"50MiB\")"
+        bind = "max_asset_upload_size:/var/www/__APP__/.env"
+        default = "50MB"
