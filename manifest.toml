@@ -15,8 +15,6 @@ maintainers = ["DeMiro5001"]
 license = "MIT" 
 website = "https://leafwiki.com/"
 demo = "https://demo.leafwiki.com/home"
-admindoc = "https://doc.yunohost.org/dev/packaging/"
-userdoc = "https://yunohost.org/apps"
 code = "https://github.com/perber/leafwiki"
 
 [integration]
@@ -82,5 +80,3 @@ ram.runtime = "50M"
     [resources.ports]
 
     [resources.apt]
-
-
