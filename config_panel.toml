@@ -17,5 +17,5 @@ services = ["__APP__", "nginx"]
         ask.fr = "Taille maximale des fichiers à télécharger"
         type = "string"
         help = "50MiB, 50MB, 52428800 (default: \"50MiB\")"
-        bind = "max_asset_upload_size:/var/www/__APP__/.env"
+        bind = "LEAFWIKI_MAX_ASSET_UPLOAD_SIZE:/var/www/__APP__/.env"
         default = "50MB"
