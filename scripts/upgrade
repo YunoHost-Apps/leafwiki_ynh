@@ -11,7 +11,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="stop"
+ynh_systemctl --service="$app" --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -53,14 +53,14 @@ yunohost service add "$app" --description="Self-hosted wiki" --log="/var/log/$ap
 
 ynh_config_add_logrotate
 
-ynh_config_add_fail2ban --logpath="/var/log/nginx/__APP__/__APP__.log" --failregex="login failed: invalid credentials"
+ynh_config_add_fail2ban --logpath="/var/log/$app/leafwiki.log" --failregex="login failed\: invalid credentials"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT

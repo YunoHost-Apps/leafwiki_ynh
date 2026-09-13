@@ -52,14 +52,14 @@ yunohost service add "$app" --description="Self-hosted wiki" --log="/var/log/$ap
 
 ynh_config_add_logrotate
 
-ynh_config_add_fail2ban --logpath="/var/log/nginx/$app/leafwiki.log" --failregex="login failed: invalid credentials"
+ynh_config_add_fail2ban --logpath="/var/log/$app/leafwiki.log" --failregex="login failed\: invalid credentials"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
