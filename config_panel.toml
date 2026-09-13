@@ -6,15 +6,16 @@ version = "1.0"
 [main]
 name.en = "Main configuration"
 name.fr = "Configuration principale"
-services = ["__APP__"]
+services = ["__APP__", "nginx"]
 
     [main.config]
     name.en = "Configuration Options"
     name.fr = "Options de configuration"
 
         [main.config.max_asset_upload_size]
-        ask.en = "Maximum size for asset uploads (e.g. 50MiB, 50MB, 52428800) (default: \"50MiB\")"
-        ask.fr = "Taille maximale des fichiers à télécharger (e.g. 50MiB, 50MB, 52428800) (default: \"50MiB\")"
+        ask.en = "Maximum size for asset uploads"
+        ask.fr = "Taille maximale des fichiers à télécharger"
         type = "string"
+        help = "50MiB, 50MB, 52428800 (default: \"50MiB\")"
         bind = "max_asset_upload_size:/var/www/__APP__/.env"
         default = "50MB"
