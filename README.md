@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   LeafWiki, packaged for YunoHost
 </h1>
 
-Self-hosted wiki. Single Go binary. SQLite + Markdown stored on disk
+Wiki with markdown stored on disk
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://leafwiki.com/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.leafwiki.com/home)
