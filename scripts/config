@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source /usr/share/yunohost/helpers
+
+#=================================================
+# RETRIEVE ARGUMENTS
+#=================================================
+
+get__max_asset_upload_size() {
+ynh_app_setting_get --key=max_asset_upload_size
+}
+
+set__max_asset_upload_size() {
+    ynh_replace --match='client_max_body_size [^"]*' --replace="client_max_body_size ${max_asset_upload_size};" --file="/etc/nginx/conf.d/$domain.d/$app.conf"
+    ynh_replace --match='LEAFWIKI_MAX_ASSET_UPLOAD_SIZE=[^"]*' --replace="LEAFWIKI_MAX_ASSET_UPLOAD_SIZE=${max_asset_upload_size}" --file="${install_dir}/.env"
+    ynh_store_file_checksum "/etc/nginx/conf.d/$domain.d/$app.conf"
+    ynh_app_setting_set --key=max_asset_upload_size --value="$max_asset_upload_size"
+    ynh_print_info "The NGINX config has been edited"
+}
+
+#=================================================
+ynh_app_config_run "$1"

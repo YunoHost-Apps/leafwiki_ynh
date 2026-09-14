@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "leafwiki"
 name = "LeafWiki"
-description.en = "Self-hosted wiki. Single Go binary. SQLite + Markdown stored on disk"
-description.fr = "Wiki auto-hébergé. Un binaire Go unique. Base de données SQLite + Markdown stockés sur disque"
+description.en = "Wiki with markdown stored on disk"
+description.fr = "Wiki avec markdown stockés sur disque"
 
 version = "0.13.0~ynh1"
 
