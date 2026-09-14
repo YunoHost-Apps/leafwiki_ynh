@@ -8,11 +8,11 @@ It shall NOT be edited by hand.
   LeafWiki, packaged for YunoHost
 </h1>
 
-Self-hosted wiki. Single Go binary. SQLite + Markdown stored on disk
+Wiki with markdown stored on disk
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://leafwiki.com/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://demo.leafwiki.com/home)
-[![Version: 0.13.0~ynh1](https://img.shields.io/badge/Version-0.13.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/leafwiki/)
+[![Version: 0.13.0~ynh2](https://img.shields.io/badge/Version-0.13.0~ynh2-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/leafwiki/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/leafwiki"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>

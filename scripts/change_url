@@ -6,12 +6,19 @@
 
 source /usr/share/yunohost/helpers
 
+secret_key=$(ynh_app_setting_get --key=secret_key)
+totp_encryption_key=$(ynh_app_setting_get --key=totp_encryption_key)
+admin_mail=$(ynh_app_setting_get --key=admin_mail)
+password=$(ynh_app_setting_get --key=password)
+max_asset_upload_size=$(ynh_app_setting_get --key=max_asset_upload_size)
+redirect_string=$(echo "https://$domain$path" | base64)
+
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="stop"
+ynh_systemctl --service="$app" --action="stop" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
@@ -23,26 +30,16 @@ ynh_config_change_url_nginx
 #=================================================
 # SPECIFIC MODIFICATIONS
 #=================================================
-
 ynh_script_progression "Updating $app's configuration files..."
 
-secret_key=$(ynh_app_setting_get --key=secret_key)
-totp_encryption_key=$(ynh_app_setting_get --key=totp_encryption_key)
-admin_mail=$(ynh_app_setting_get --key=admin_mail)
-password=$(ynh_app_setting_get --key=password)
-max_asset_upload_size=$(ynh_app_setting_get --key=max_asset_upload_size)
-
 ynh_config_add --template=".env" --destination="$install_dir/.env"
-
-chmod 400 "$install_dir/.env"
-chown "$app:$app" "$install_dir/.env"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
