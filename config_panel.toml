@@ -16,6 +16,13 @@ services = ["__APP__", "nginx"]
         ask.en = "Maximum size for asset uploads"
         ask.fr = "Taille maximale des fichiers à télécharger"
         type = "string"
+        default = "50MB"
         help = "50MiB, 50MB, 52428800 (default: \"50MiB\")"
         bind = "LEAFWIKI_MAX_ASSET_UPLOAD_SIZE:/var/www/__APP__/.env"
-        default = "50MB"
+
+        [main.config.read_access]
+        ask.en = "Allow public access to the wiki with read access"
+        ask.fr = "Autoriser l'accès public au wiki en lecture seule"
+        type = "boolean"
+        default = "false"
+        bind = "LEAFWIKI_PUBLIC_ACCESS:/var/www/__APP__/.env"

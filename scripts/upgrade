@@ -24,6 +24,7 @@ admin_mail=$(ynh_app_setting_get --key=admin_mail)
 password=$(ynh_app_setting_get --key=password)
 max_asset_upload_size=$(ynh_app_setting_get --key=max_asset_upload_size)
 redirect_string=$(echo "https://$domain$path" | base64)
+read_access=$(ynh_app_setting_get --key=read_access)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
