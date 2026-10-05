@@ -22,5 +22,14 @@ set__max_asset_upload_size() {
 #    ynh_print_info "The NGINX config has been edited"
 }
 
+get__leafwiki_public_access() {
+ynh_app_setting_get --key=leafwiki_public_access
+}
+
+set__leafwiki_public_access() {
+    ynh_replace --match='LEAFWIKI_PUBLIC_ACCESS=[^"]*' --replace="LEAFWIKI_PUBLIC_ACCESS=${leafwiki_public_access}" --file="${install_dir}/.env"
+    ynh_app_setting_set --key=leafwiki_public_access --value="$leafwiki_public_access"
+}
+
 #=================================================
 ynh_app_config_run "$1"
