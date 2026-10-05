@@ -25,6 +25,8 @@ password=$(ynh_app_setting_get --key=password)
 max_asset_upload_size=$(ynh_app_setting_get --key=max_asset_upload_size)
 redirect_string=$(echo "https://$domain$path" | base64)
 
+ynh_app_setting_set_default --key=leafwiki_public_access --value=true
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
