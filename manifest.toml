@@ -50,6 +50,12 @@ ram.runtime = "50M"
     help.fr = "Mot de passe admin."
     type = "password"
 
+    [install.leafwiki_public_access]
+    ask.en = "Enable public access"
+    help.fr = "Activer l'accès public"
+    type = "boolean"
+    default = true
+
 [resources]
     [resources.sources]
 
