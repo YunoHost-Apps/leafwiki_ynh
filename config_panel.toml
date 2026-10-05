@@ -20,7 +20,7 @@ services = ["__APP__", "nginx"]
         bind = "LEAFWIKI_MAX_ASSET_UPLOAD_SIZE:/var/www/__APP__/.env"
         default = "50MB"
 
-        [install.leafwiki_public_access]
+        [main.config.leafwiki_public_access]
         ask.en = "Enable public access"
         help.fr = "Activer l'accès public"
         type = "boolean"
