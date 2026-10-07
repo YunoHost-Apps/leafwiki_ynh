@@ -7,7 +7,7 @@ name = "LeafWiki"
 description.en = "Wiki with markdown stored on disk"
 description.fr = "Wiki avec markdown stockés sur disque"
 
-version = "0.13.0~ynh3"
+version = "0.13.0~ynh4"
 
 maintainers = ["DeMiro5001"]
 
@@ -49,6 +49,12 @@ ram.runtime = "50M"
     help.en = "Admin password."
     help.fr = "Mot de passe admin."
     type = "password"
+
+    [install.leafwiki_public_access]
+    ask.en = "Enable public access"
+    help.fr = "Activer l'accès public"
+    type = "boolean"
+    default = true
 
 [resources]
     [resources.sources]
