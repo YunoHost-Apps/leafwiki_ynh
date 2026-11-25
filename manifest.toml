@@ -7,7 +7,7 @@ name = "LeafWiki"
 description.en = "Wiki with markdown stored on disk"
 description.fr = "Wiki avec markdown stockés sur disque"
 
-version = "0.14.2~ynh1"
+version = "0.15.0~ynh1"
 
 maintainers = ["DeMiro5001"]
 
@@ -63,10 +63,10 @@ ram.runtime = "50M"
     in_subdir = false
     extract = false
     rename = "leafwiki"
-    amd64.url = "https://github.com/perber/leafwiki/releases/download/v0.14.2/leafwiki-v0.14.2-linux-amd64"
-    amd64.sha256 = "b72e9eb2fc0e7bd944146e8536aead3777bf7fd8fda331f38b9a05ee6751c72b"
-    arm64.url = "https://github.com/perber/leafwiki/releases/download/v0.14.2/leafwiki-v0.14.2-linux-arm64"
-    arm64.sha256 = "002a3070622c973ef3daa9a36bacd296fb8abd006b8c675e7f6ce419f4cd76e8"
+    amd64.url = "https://github.com/perber/leafwiki/releases/download/v0.15.0/leafwiki-v0.15.0-linux-amd64"
+    amd64.sha256 = "41c0478010a076003dfbd268db72ac0a3e685951fafe56f4c2bdf297233941ea"
+    arm64.url = "https://github.com/perber/leafwiki/releases/download/v0.15.0/leafwiki-v0.15.0-linux-arm64"
+    arm64.sha256 = "90d7d52aaefcfefd49a37c0a5eb2e409cf47a29225c706038d252b98f6ac7536"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = "leafwiki-v\\d+\\.\\d+\\.\\d+\\-linux-amd64$"
