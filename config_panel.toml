@@ -22,7 +22,7 @@ services = ["__APP__", "nginx"]
 
         [main.config.leafwiki_public_access]
         ask.en = "Enable public access"
-        help.fr = "Activer l'accès public"
+        ask.fr = "Activer l'accès public"
         type = "boolean"
         bind = "LEAFWIKI_PUBLIC_ACCESS:/var/www/__APP__/.env"
         default = true
